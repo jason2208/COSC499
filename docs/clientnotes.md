@@ -61,3 +61,12 @@
 - Stripe will be used for payment
 - If there needs to be any systems up and running, let kimberlee know
 - Cody will come up with the exact question to ask the former students about the database
+
+## Week 5 (Oct 29th, 2021)
+- Going over how every team is doing, team 0 is getting started on some of the features
+- Cass’s team has been focusing a lot on the database, hosted on a new server and a new design
+- They have been working on the dashboard as well
+- Cody shared some of his work in the meeting
+- From the dashboard you can query for appointments, clients, and users
+- Ali will record a video to send to the previous team about the database
+
