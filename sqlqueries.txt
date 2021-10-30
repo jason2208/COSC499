@@ -1,0 +1,48 @@
+
+CREATE TABLE healerQuery (
+    hid int,
+    hname varchar(30),
+    address varchar(30),
+    city varchar(20),
+    province varchar(20),
+     PRIMARY KEY (hid)
+);
+
+CREATE TABLE transactionQuery (
+    cid int,
+    hid int,
+    tdate DATE,
+    amount decimal(5,2),
+    PRIMARY KEY (cid, hid, tdate)
+);
+
+CREATE TABLE appointmentQuery (
+    cid int,
+    hid int,
+    tdate DATE,
+    location decimal(5,2),
+    PRIMARY KEY (cid, hid, tdate)
+);
+
+CREATE TABLE servicesQuery (
+    sid int,
+    sname varchar(30),
+    fee decimal(5,2),
+    description varchar(100),
+    PRIMARY KEY (sid)
+);
+
+CREATE TABLE reviewsQuery (
+    rid int,
+    cid int,
+    hid int,
+    sid int,
+    description varchar(90),
+    rdate DATE,
+    rating int,
+    PRIMARY KEY (rid)
+    FOREIGN KEY (cid) REFERENCES transactionQuery(cid),
+    FOREIGN KEY (hid) REFERENCES healerQuery(hid),
+    FOREIGN KEY (sid) REFERENCES servicesQuery(sid),
+   
+);
