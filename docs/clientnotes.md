@@ -38,3 +38,35 @@
 - Amy said she would set up her environment and check this out over the weekend
 - Have another meeting on monday or tuesday
 
+## Week 4 (Oct. 22nd, 2021)
+- Going over who still needs to get the backend running, Cass needs to get the data to load
+- Gerald is getting a unique error when running his backend, will post error to the 3 teams discord
+- Anyone who is having errors should post the error with the @everyone tag
+- Going over where the database is stored
+- Verifying if people are a healer or a client - possible feature
+- Admin dashboard to remove inappropriate and/or illegal accounts - possible feature
+	- Remove/disable healers and clients
+	- Reporting mechanism
+	- Removing ads
+- Kimberless can verify accounts after they’ve been created, to not slow down the sign up process
+- Simple layout, don’t need to know a lot about the backend to use
+- Kimberlee thinks search and location are good features to implement first
+- She’ll create a list of tags to search by
+- Users should be able to tag what they were dealing with/ what they were getting help with in their review of a healer
+- Add map to show healers close to the user
+- Search bar shown under global healing network box/just above browse our healers
+- Might be hard to validate if a person is a proper healer or not 
+- Discussing insurance and the legality of the healers, see if there needs to be anything done code-wise
+- Get everyone using the backend by monday
+- Stripe will be used for payment
+- If there needs to be any systems up and running, let kimberlee know
+- Cody will come up with the exact question to ask the former students about the database
+
+## Week 5 (Oct 29th, 2021)
+- Going over how every team is doing, team 0 is getting started on some of the features
+- Cass’s team has been focusing a lot on the database, hosted on a new server and a new design
+- They have been working on the dashboard as well
+- Cody shared some of his work in the meeting
+- From the dashboard you can query for appointments, clients, and users
+- Ali will record a video to send to the previous team about the database
+
