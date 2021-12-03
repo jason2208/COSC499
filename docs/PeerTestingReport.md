@@ -16,6 +16,69 @@ Cassie Peters|Andrew Kiggins|Completed|Think Aloud |https://drive.google.com/fil
 Jason Hsiao|Jesse Plamondon|Completed|User Feedback|https://drive.google.com/file/d/137SEOy5yLTZOeAM9_tbVBdXADhjlWSLG/view?usp=sharing
 Jason Hsiao|Reid Folk|Completed|Think Aloud|https://drive.google.com/file/d/1FVu9cxzkI05hLxS8mJvKeQ_-zSJ5lzXn/view?usp=sharing
 
+># User Groups and Associated Tasks 
+>##  User Group: Administrators
+> Tested Feature: The Administrator Dashboard
+ - Open the dashboard project (should already be done)
+ - Navigate to the client page by clicking the client tab on the top left of the page
+- Click on the dropdown menu directly below the client tab and select “Client ID” to change the search option
+Type “2” into the search bar to retrieve the client with the client id of 2
+- Click on the dropdown menu another time and select “Full Name”  to change the search option
+- Type “Jill Joe” into the search bar to retrieve the client with the full name of Jill Joe
+- Click on the result in the table and then click the disable button to disable this client
+- Click on the one client again and then click the enable button to enable this client
+- Empty the search bar and click “Search”
+- You should see a list of all 4 clients in the database
+- Select all 4 clients by clicking on all of them
+- Click on the clear button to deselect all the clients
+- Navigate to the healer page by clicking “Healer” tab on the top of the page
+- Notice all the healers that show up initially in the table
+- Disable the healers with the Healer ID’s of 3 and 4 by selecting both of them and clicking on the disable button
+- Leaving the search bar empty, click on the dropdown menu that says “Enabled” and change it to “Disabled”
+- Now you should only see healers with Healer ID’s of 3 and 4 from before
+- Revert your changes by clicking on these two healers and selected the enable button
+- Now that you are more familiar with the basics of the dashboard, browse through the remaining tabs and try performing your own searches
+
+>User Group: Clients
+>#Tested Feature: The Signup/Login Process
+- Open the WooWooNetwork project home page (should already be done)
+- Scroll down the page and take a look at the list of healers
+- Return to the top of the page and click on the sign up tab
+- Enter in some dummy data since the website is currently unsecure and make sure to keep the “Are you a healer?” option unselected
+- Now click on the login tab on the top right of the page
+- This often doesn’t work so we’re interested to see what happens when other people try themselves
+- For the case that it didn’t work, what kind of problems do you see?
+- Otherwise, proceed to take a look around the authorized version of the site and log out when you feel you have seen everything
+- UX Evaluation: Clients
+- Tested Feature: Web Application
+- On the landing page Register for the site by clicking the button that you think will allow you to do so
+- Register for the site 
+- What information would you not want to provide? 
+- What information do you think should be optional? 
+- Would you register using social accounts on the site if given the option instead? 
+- Now that you’re registered as a user login to the site
+- Find all healers in kelowna
+- Select a kelowna healer like “Charley Roy”
+- Send Charlie Roy a direct message asking about a service they have listed
+- Select a service of Charlie’s
+- Find the price and the rating of the selected service 
+- Find the reviews of the selected service
+- Book an appointment for January 19th at 10am
+- Select a payment method
+
+>UX Evaluation: Healers
+>#Tested Feature: Web Application
+- On the landing page Register for the site as a prospective healer by clicking the button that you think will allow you to do so
+- Is the path to registering intuitive? 
+- Register for the site as a healer
+- What information would you not want to provide as a healer? 
+- Would you be willing to provide geographic data on the location of your practice? 
+- What information do you think should be optional and what information is potentially missing? 
+- Now that you’re registered as a healer login to the site
+- Upload your first service 
+- Navigate to the Service Page
+- Do you like the layout? 
+- Based on this page what information do you think you need to provide to post a service? 
 
 
 >## Results Bar Graph
