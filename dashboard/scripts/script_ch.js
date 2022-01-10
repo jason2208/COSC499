@@ -14,9 +14,6 @@ window.onload = function() {
     btnRemove.addEventListener("click", putCheckedIDsInRemoveForm, false);
     selectVisibilityFilter.addEventListener("change", filter, false);
 
-    handleFooter(); //change footer depending on number of outputted rows
-
-
     function clear() {
         for (var i = 1, row; row = table.rows[i]; i++) {
             var checkbox = row.cells[0].childNodes[0];
@@ -102,15 +99,6 @@ window.onload = function() {
                     row.style.display = "";
                 }
             }
-        }
-    }
-
-    function handleFooter() {
-        var footer = document.getElementById("footer");
-        if (table.rows.length == 101) {
-            footer.style.display = "";
-        } else {
-            footer.style.display = "none";
         }
     }
 }

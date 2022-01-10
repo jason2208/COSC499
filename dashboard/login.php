@@ -7,28 +7,19 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    echo $email;
-    echo $password;
+    $sql = "SELECT * FROM administrator WHERE email = '$email' AND password = '$password';";
 
-    $sql = "SELECT * FROM administrator WHERE email = '$email' AND password ='$password'";
+    $result = $conn->query($sql);
 
-        $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        session_start();
+        $_SESSION["loggedin"] = TRUE;
+        header('Location: /dashboard/client.php');
+    } else {
+        echo "Access denied! Administrator doesn't exist.";
+    }
 
-        if ($result->num_rows > 0) {
-
-        $rows = "";
-        $count = 0;
-        $enabled = "1";
-
-        while ($row = $result->fetch_assoc()) {
-            $row["enabled"] == "1" ? $enabled = "Enabled" : $enabled = "Disabled";
-            $count++;
-            $rows .= "<tr><td><input type='checkbox' id='checkbox$count'></td><td>" . $row["id"] . "</td><td>" . $row["name"]. "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["address"] . "</td><td>" . $enabled . "</td></tr>";
-        }
-
-
-        $conn->close();
-
+    $conn->close();
 }
 ?>
 
@@ -40,8 +31,9 @@ if (isset($_POST["submit"])) {
     </head>
     <body>
         <form action="login.php" method="post">
+            <h1>Administrator Login</h1>
             <input type="email" placeholder="Email" name="email">
-            <input type="password" placeholder="Email" name="password">
+            <input type="password" placeholder="Password" name="password">
             <input type="submit" value="Login" name="submit">
         </form>
     </body>
