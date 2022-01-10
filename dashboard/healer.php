@@ -1,4 +1,12 @@
 <?php
+
+    //check if administrator is logged in
+    session_start();
+    if (!isset($_SESSION["loggedin"])) {
+        header('Location: dashboard/login.php');
+        die();
+    }
+
     include_once("includes/dbh.inc.php");
 
     if (isset($_GET["formSearch"]) && isset($_GET["type"]) && isset($_GET["query"])) {
@@ -6,12 +14,12 @@
         $type = $_GET["type"];
         $query = $_GET["query"];
 
-        $sql = "SELECT * FROM healer LIMIT 100";
+        $sql = "SELECT * FROM healer";
 
         if ($query != "") {
             $mappings = array("Healer ID"=>"id", "Full Name"=>"name", "Email"=>"email", "Address"=>"address");
             $type = $mappings[$type];
-            $sql = "SELECT * FROM healer WHERE $type LIKE '%$query%' LIMIT 100";
+            $sql = "SELECT * FROM healer WHERE $type LIKE '%$query%'";
         }
 
         $result = $conn->query($sql);
@@ -25,7 +33,7 @@
             while ($row = $result->fetch_assoc()) {
                 $row["enabled"] == "1" ? $enabled = "Enabled" : $enabled = "Disabled";
                 $count++;
-                $rows .= "<tr><td><input type='checkbox' id='checkbox$count'></td><td>" . $row["id"] . "</td><td>" . $row["name"]. "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["address"] . "</td><td>" . $enabled . "</td></tr>";
+                $rows .= "<tr><td><input type='checkbox' id='checkbox$count'></td><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["address"] . "</td><td>" . $enabled . "</td></tr>";
             }
 
         } else {
@@ -89,15 +97,15 @@
             <div id="top-bar">
                     <div id="top-bar-query">
                         <form action="healer.php" method="get">
-                                <select name="type">
-                                    <option name="id" <?php if (isset($type) && $type == "id") { echo("selected"); } ?>>Healer ID</option>
-                                    <option name="name" <?php if (isset($type) && $type == "name") { echo("selected"); } ?>>Full Name</option>
-                                    <option name="email" <?php if (isset($type) && $type == "email") { echo("selected"); } ?>>Email</option>
-                                    <option name="address" <?php if (isset($type) && $type == "address") { echo("selected"); } ?>>Address</option>
-                                </select>
-                                <input type="text" name="query" value="<?php if (isset($query)) { echo($query); }?>">
-                                <input id="btn-search" type="submit" name="formSearch" value="Search">
-                                <select id="select-visibility-filter">
+                            <select name="type">
+                                <option name="id" <?php if (isset($type) && $type == "id") { echo("selected"); } ?>>Healer ID</option>
+                                <option name="name" <?php if (isset($type) && $type == "name") { echo("selected"); } ?>>Full Name</option>
+                                <option name="email" <?php if (isset($type) && $type == "email") { echo("selected"); } ?>>Email</option>
+                                <option name="address" <?php if (isset($type) && $type == "address") { echo("selected"); } ?>>Address</option>
+                            </select>
+                            <input type="text" name="query" value="<?php if (isset($query)) { echo($query); }?>">
+                            <input id="btn-search" type="submit" name="formSearch" value="Search">
+                            <select id="select-visibility-filter">
                                 <option id="show-all">Show All</option>
                                 <option name="show-enabled">Enabled</option>
                                 <option name="show-disabled">Disabled</option>
@@ -141,11 +149,7 @@
                     ?>
                 </tbody>
             </table>
-            <div id="footer">
-                <a class="page-change" href="#">Previous</a>
-                <a class="page-change" href="#">Next</a>
-            </div>
         </div>
     </body>
-    <script src="scripts/scripts.js"></script>
+    <script src="scripts/script_ch.js"></script>
 </html>
