@@ -4,23 +4,23 @@ if (isset($_POST["submit"])) {
 
     include_once("includes/dbh.inc.php");
 
+    $sql = "SELECT * FROM administrator WHERE email=? AND password=?";
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("ss", $email, $password);
     $email = $_POST["email"];
     $password = $_POST["password"];
-
-    $sql = "SELECT * FROM administrator WHERE email = '$email' AND password = '$password';";
-
-    $result = $conn->query($sql);
-
+    $stmt->execute();
+    $result = $stmt->get_result();
     if ($result->num_rows > 0) {
         session_start();
         $_SESSION["loggedin"] = TRUE;
         header('Location: /dashboard/client.php');
     } else {
-        echo "Access denied! Administrator doesn't exist.";
+        echo "Access denied! Administrator with this email and password doesn't exist.";
     }
-
     $conn->close();
 }
+
 ?>
 
 <!DOCTYPE html>
