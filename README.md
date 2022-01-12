@@ -12,4 +12,5 @@ The Woo Woo Network is an online hub that connects healers with clients in need 
 ## Setup
 1) Make sure to have PHP, MySQL, and Apache installed. On Windows, we recommend xampp to install everything once. https://www.apachefriends.org/download.html
 2) Clone the GitHub repository into the `htdocs` folder inside your xampp/apache installation using `git clone https://github.com/GreyWolfSif/COSC499Project.git`
-3) Navigate to the `dashboard` folder and click on any php file to launch our portion of the project.
+3) Navigate to `dashboard`, `search`, or `accounts` and click on any php file to view our source code. These files can be moved to the root folder of a server to
+be accessed through localhost or online.
