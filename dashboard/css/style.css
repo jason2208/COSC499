@@ -214,3 +214,60 @@ form {
 .empty {
     clear: both;
 }
+
+#email-box {
+    border-radius: 5px;
+    width: 300px;
+    height: 35px;
+    border: 1px solid black;
+}
+
+#password-box {
+    border-radius: 5px;
+    width: 300px;
+    height: 35px;
+    border: 1px solid black;
+}
+
+#admin-login-form {
+    position: fixed; /* or absolute */
+    top: 45%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -45%);
+
+    text-align: center;
+}
+
+#admin-login-form input[type="email"] {
+    margin-top: 10px;
+    padding-left: 8px;
+}
+
+#admin-login-form input[type="password"] {
+    margin-top: 10px;
+    padding-left: 8px;
+}
+
+#admin-login-form h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#admin-login-form input[type="submit"] {
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+}
+
+#admin-login-form input[type="submit"]:hover {
+    background-color: white;
+}
+
+#admin-login-form p {
+    background-color: lightcoral;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}

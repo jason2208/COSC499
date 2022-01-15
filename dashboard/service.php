@@ -3,7 +3,7 @@
     //check if administrator is logged in
     session_start();
     if (!isset($_SESSION["loggedin"])) {
-        header('Location: dashboard/login.php');
+        header('Location: ./login.php');
         die();
     }
 
