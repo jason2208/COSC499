@@ -70,3 +70,11 @@
 - From the dashboard you can query for appointments, clients, and users
 - Ali will record a video to send to the previous team about the database
 
+## (Jan 21st, 2021)
+- Hassan brought up how the booking and payment systems implemented by the previous group are not working properly. The time slot doesn’t show up.
+- Kimberlee mentioned she wants different currency options on the Stripe payment system and Hassan suggested adding Paypal.
+- Kimberlee referred all the teams to the original email and suggested contacting the previous team to clear up the confusion around the   booking system.
+- Talked about getting Kimberlee to sign up for the Google Maps API.
+- Ali talked about what he plans to do this semester (the dashboard).
+- Cody asked what assets such as logos Kimberlee wants to use on the newer version of the site.
+- Kimberlee will send out a folder with all the website assets
