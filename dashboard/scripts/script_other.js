@@ -1,24 +1,27 @@
 window.onload = function() {
 
     //get elements from html form
-    var table = document.getElementById("table-results");
-    var btnClear = document.getElementById("btn-clear");
-    var btnRemove = document.getElementById("btn-remove");
+    var table = $('#table-results');
+    var btnClear = $('#btn-clear');
+    var btnRemove = $("#btn-remove");
 
-    btnClear.addEventListener("click", clear, false);
-    btnRemove.addEventListener("click", putCheckedIDsInRemoveForm, false);
+    
+    //handleFooter(); //change footer depending on number of outputted rows
 
-    handleFooter(); //change footer depending on number of outputted rows
-
-    function clear() {
-        for (var i = 1, row; row = table.rows[i]; i++) {
-            var checkbox = row.cells[0].childNodes[0];
-            checkbox.checked = false; 
+    //clear checkbox in the table on the left
+    btnClear.on('click',function(){
+        //find last index of table
+        last=table.find('tr:last').index();
+        //uncheck box
+        for(var i=1;i<=last+1;i++){
+            $('#checkbox'+i).prop('checked',false);
         }
-    }
+    });
 
-    function putCheckedIDsInRemoveForm() {
-        var hidden = document.getElementById("hiddenRemove");
+
+    //To remove a selected row
+    btnRemove.on('click',function(){
+        var hidden =$('#hiddenRemove');
         var checkedIDs = getCheckedIDs();
         var result = "";
         for (var i = 0; i < checkedIDs.length; i++) {
@@ -27,39 +30,48 @@ window.onload = function() {
                 result += ",";
             }
         }
+        //Confirm with admin if actually want to remove
         if (result != "") {
             var txt;
             var r = confirm("Are you sure you want to remove the rows with the following IDs?\n" + result);
             if (r == true) {
                 txt = "true";
-                hidden.value = result;
+                hidden.val(result);
             } else {
                 txt = "false";
-                hidden.value = "";
+                hidden.val("");
             }
         } else {
             alert("You must select rows before deletion");
         }
-    }
+    })
 
+
+    // Get IDs where the checkbox is checked
     function getCheckedIDs() {
         var checked = [];
-        for (var i = 1, row; row = table.rows[i]; i++) {
-            var checkbox = row.cells[0].childNodes[0];
-            if (checkbox.checked) {
-                var id = row.cells[1].innerHTML;
-                checked.push(id);
+        last=table.find('tr:last').index();
+        //loop through each row to see if checked
+        for(var i=1;i<=last+1;i++){
+            if($('#checkbox'+i).is(':checked')){
+                checked.push(i);
             }
         }
         return checked;
     }
 
-    function handleFooter() {
-        var footer = document.getElementById("footer");
-        if (table.rows.length == 101) {
-            footer.style.display = "";
-        } else {
-            footer.style.display = "none";
-        }
-    }
+
+
+    //
+    //cant find footer so commented out
+    //
+    // function handleFooter() {
+    //     var footer = $("#footer");
+    //     // get num of rows
+    //     if ($('#table-results tr').length == 101) {
+    //         footer.css('display',"''");
+    //     } else {
+    //         footer.css('display',"none");
+    //     }
+    // }
 }

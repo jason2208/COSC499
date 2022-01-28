@@ -165,5 +165,6 @@
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="scripts/script_ch.js"></script>
+    <!-- echo time is added for consistent change in js file -->
+    <script src="scripts/script_ch.js?v=<?php echo time(); ?>"></script>
 </html>
