@@ -13,13 +13,25 @@
 
         $type = $_GET["type"];
         $query = $_GET["query"];
-
+        $option = $_GET["select-filter"];
         $sql = "SELECT * FROM healer";
-
-        if ($query != "") {
+        if($option=='Enabled'){
+            $status=1;
+        }else{
+            $status=0;
+        }
+        if ($query != "" && $option=="Show All") {
             $mappings = array("Healer ID"=>"id", "Full Name"=>"name", "Email"=>"email", "Address"=>"address");
             $type = $mappings[$type];
             $sql = "SELECT * FROM healer WHERE $type LIKE '%$query%'";
+        }else if($query != "" && $option!="Show All"){
+            $mappings = array("Healer ID"=>"id", "Full Name"=>"name", "Email"=>"email", "Address"=>"address");
+            $type = $mappings[$type];
+            $sql = "SELECT * FROM healer WHERE $type LIKE '%$query%' AND enabled=$status";//ffff
+        }else if($query == "" && $option!="Show All"){
+            $mappings = array("Healer ID"=>"id", "Full Name"=>"name", "Email"=>"email", "Address"=>"address");
+            $type = $mappings[$type];
+            $sql = "SELECT * FROM healer WHERE $type LIKE '%$query%' AND enabled=$status";//ffff
         }
 
         $result = $conn->query($sql);
@@ -104,12 +116,12 @@
                                 <option name="address" <?php if (isset($type) && $type == "address") { echo("selected"); } ?>>Address</option>
                             </select>
                             <input type="text" name="query" value="<?php if (isset($query)) { echo($query); }?>">
-                            <input id="btn-search" type="submit" name="formSearch" value="Search">
-                            <select id="select-visibility-filter">
+                            <select id="select-visibility-filter" name='select-filter'>
                                 <option id="show-all">Show All</option>
                                 <option name="show-enabled">Enabled</option>
                                 <option name="show-disabled">Disabled</option>
                             </select>
+                            <input id="btn-search" type="submit" name="formSearch" value="Search">
                         </form>
                     </div>
                     <div id="top-bar-toggles">
@@ -151,5 +163,6 @@
             </table>
         </div>
     </body>
-    <script src="scripts/script_ch.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/script_ch.js?v=<?php echo time(); ?>"></script>
 </html>
