@@ -1,17 +1,20 @@
 <?php
 
-class sqlConnect {
 
+function OpenCon()
+ {
+ $dbhost = "localhost";
+ $dbuser = "test1";
+ $dbpass = "test1";
+ $db = "woowoodev";
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
-  public function openCon(){
-    $conn = new mysqli("localhost", "test1", "test1","woowoodev") or die("Connect failed: %s\n". $conn -> error);
-    return $conn;
-  }
+ return $conn;
+ }
 
-  public function closeCon($conn){
-    $conn -> close();
-  }
-
-}
+function CloseCon($conn)
+ {
+ $conn -> close();
+ }
 
 ?>
