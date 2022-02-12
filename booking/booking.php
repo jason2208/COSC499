@@ -1,3 +1,28 @@
+<?php
+
+session_start();
+
+include_once("dbh.inc.php");
+
+
+
+$sql="SELECT * FROM healer";
+
+
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+
+    $rows = "";
+    $count = 0;
+    $enabled = "1";
+
+    while ($row = $result->fetch_assoc()) {
+        $rows .= "<option name=".$row['name'].">".$row['name']."</option>";
+    }
+}
+$conn->close();
+?>
+
 <html>
     <title>
         Booking
@@ -14,7 +39,14 @@
         <div style="width: 100%;">
             <div style="float:left; width: 50%; border-right: 1cm;">
                 <p>
-                    healer info
+                    <form action='booking.php' method="get">
+                    <select name="select" id="select">
+                        <option value="none" selected disabled hidden>Select an option</option>
+                        <?php
+                            echo($rows);
+                        ?>
+                    </select>
+                    </form>
                 </p>
             </div>
             <div style="float:left; width: 50%;">
