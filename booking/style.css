@@ -1,0 +1,8 @@
+.top-bar{
+    position: relative;
+}
+
+.top-bar a{
+    margin-left: 20px;
+    border-right: 1cm;
+}
