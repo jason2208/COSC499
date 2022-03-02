@@ -14,9 +14,9 @@ class Navbar extends React.Component{
 
       <nav className="NavbarItems">
  
-          <div class="container">
+          <div className="container">
             <a href="/home">
-                <img src={logo} alt="Logo" />
+                <img src={logo} alt="Logo" width='0.1em'/>
             </a>
           </div>
 

@@ -1,0 +1,23 @@
+export const Services=[
+    { name:'Meditation'},
+    { name:'Biofeedback Therapy'},
+    { name:'Art Therapy'},
+    { name:'Dance Therapy'},
+    { name:'Music Therapy'},
+    { name:'Guided imagery Therapy'},
+    { name:'Electromagnetic Therapy'},
+    { name:'Reiki'},
+    { name:'Qigong'},
+    { name:'Massage Therapy'},
+    { name:'Body movement Therapy'},
+    { name:'Tai chi'},
+    { name:'Yoga'},
+    { name:'Acupuncture Therapy'},
+    { name:'Ayurveda'},
+    { name:'Homeopathy'},
+    { name:'Naturopathy'},
+    { name:'Chiropractic Medicine'},
+    { name:'Hypnotherapy'},
+    { name:'Reflexology'},
+    { name:'Traditional Chinese Medicine'}
+]
