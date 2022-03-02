@@ -1,4 +1,5 @@
 import React, {} from "react";
+//import { Link } from "router";
 
 import { MenuItems } from "./MenuItems";
 import { Component } from "react/cjs/react.production.min";
@@ -35,10 +36,6 @@ class Navbar extends React.Component{
           })}
          
         </ul>
-        <div className="sign-up-buttons">
-          <Button className="btn--outline">Sign In</Button>
-          <Button>Sign Up</Button>
-        </div>
       </nav>
 
 
