@@ -1,5 +1,6 @@
 import React from 'react'
 import Map from './map.js'
+import Healers from './healers.js'
 import './search.css'
 
 class Search extends React.Component{
@@ -7,17 +8,11 @@ class Search extends React.Component{
         return(
         <div className='body'>
             <div className='healerFrame'>
-                <div className='location'>
-            
-                </div>
-                <div className='sortBar'>
-
-                </div>
-                <div className='healers'>
-
-                </div>
+            <Healers />
             </div>
             <div className='mapFrame'>
+            <div className='center_bar'>   
+            </div>
             <Map />
             </div>
         </div>
