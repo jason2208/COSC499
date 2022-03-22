@@ -1,48 +1,37 @@
-import React, {} from "react";
+import React from 'react';
 
-import { MenuItems } from "./MenuItems";
-import { Component } from "react/cjs/react.production.min";
+import { MenuItems } from './MenuItems';
 import './Navbar.css';
 import logo from '../../Images/logo.png';
-import {Button} from '../Button/button';
+import { Button } from '../Button/button';
 
-class Navbar extends React.Component{
-
-
-  render(){
+class Navbar extends React.Component {
+  render() {
     return(
-
-      <nav className="NavbarItems">
- 
-          <div className="container">
-            <a href="/home">
-                <img src={logo} alt="Logo" width='0.1em'/>
-            </a>
-          </div>
-
-        <div className="menu-icon">
+      <nav className='navbar-items'>
+        <div className='container'>
+          <a href='/home'>
+              <img src={logo} alt='Logo' width='0.1em'/>
+          </a>
         </div>
-        
+        <div className='menu-icon'></div>
         <ul className={'nav-menu'}>
           {MenuItems.map((item,index)=>{
-              return(
-                <li key={index}>
-                  <a className={item.cName} href={item.url}>
-                    {item.title}
-                  </a>
-                </li>
-              )
+            return(
+              <li key={index}>
+                <a className={item.cName} href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            )
           })}
-         
         </ul>
-        <div className="sign-up-buttons">
-          <Button className="btn--outline">Sign In</Button>
+        <div className='sign-up-buttons'>
+          <Button>Sign In</Button>
           <Button>Sign Up</Button>
         </div>
       </nav>
-
-
-    );
+    )
   }
 }
 
