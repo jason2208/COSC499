@@ -4,6 +4,11 @@ import { Tags } from "./tags";
 import { Regions } from "./Regions.js";
 import { Services } from "./Services";
 
+
+function testClick(){
+    console.lo("u printed something");
+}
+
 function Dropdown(props){
     return(
 <div>
@@ -47,8 +52,11 @@ function DropdownMenu1(){
     return(
         <div className="dropdown1">
          {Regions.map((item,index)=>{
+              {console.log(item.name)}
             return (
-            <DropdownMenuOption leftIcon={item.name}>{item.name}</DropdownMenuOption>
+            <div id={item.name} >
+            <DropdownMenuOption  leftIcon={item.name}>{item.name}</DropdownMenuOption>
+            </div>
             )
         })};
     

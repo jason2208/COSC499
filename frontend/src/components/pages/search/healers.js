@@ -33,6 +33,12 @@ class healers extends React.Component{
   };
   };
 }
+
+testClick(){
+  console.log("You Selected:  ");
+}
+
+
 exitClick(healerState) {
   return function() {
 
