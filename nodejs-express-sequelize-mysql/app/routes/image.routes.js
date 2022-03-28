@@ -4,7 +4,7 @@ module.exports = app => {
 
   var router = require("express").Router();
   var uploadController = require("../controllers/upload");
-  var upload = require("../imageHandling/upload");
+  var upload = require("../middleware/imageHandler");
   var image = require("../controllers/image.controller.js");
 
 

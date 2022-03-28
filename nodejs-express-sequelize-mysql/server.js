@@ -4,6 +4,7 @@ const app = express();
 global.__basedir = __dirname;
 const db = require("./app/models");
 
+
 db.sequelize.sync({ force: true }).then(() => {
     console.log("Drop and re-sync db.");
   });
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to WWN!" });
 });
+app.use(express.static('public/imgs'))
 
 require("./app/routes/image.routes")(app);
 require("./app/routes/user.routes")(app);

@@ -2,6 +2,12 @@ const db = require("../models");
 const Image = db.image;
 const Op = db.Sequelize.Op;
 
+//TO DO:
+/*
+1) Delete only 1 image using name
+2) update image name 
+3) select uid, name, filepath only instead of select * 
+*/
 
 // Retrieve all images from the database where uid is
 exports.findAll = (req, res) => {
@@ -55,7 +61,6 @@ exports.update = (req, res) => {
   const uid = req.query.uid;
   Image.update(req.query, {
     where: { uid: uid }
-
   })
     .then(num => {
       if (num == 1) {
