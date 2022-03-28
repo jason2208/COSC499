@@ -5,8 +5,8 @@ const Image = db.image;
 
 const uploadFiles = async (req, res) => {
   try {
-
-    console.log(req.file);
+    console.log(req.body);
+    //console.log(req.file);
     if (req.file == undefined) {
       return res.send(`You must select a file.`);
     }
