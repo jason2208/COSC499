@@ -9,16 +9,16 @@ module.exports = app => {
 
 
   // Retrieve all users
-  router.get("/image/", image.findAll);
+  router.get("/", image.findAll);
   // Retrieve a single user with id
-  router.get("/image/:uid", image.findOne);
+  router.get("/:uid", image.findOne);
   // Update a user with id
-  router.put("/image/:uid", image.update);
+  router.put("/:uid", image.update);
   // Delete a user with id
-  router.delete("/image/:uid", image.delete);
+  router.delete("/:uid", image.delete);
   // Delete all user
-  router.delete("/image/", image.deleteAll);
+  router.delete("/", image.deleteAll);
   //upload image associated with user id 
   router.post("/upload", upload.single("file"), uploadController.uploadFiles);
-  return app.use("/", router);
+  return app.use("/image", router);
 };
