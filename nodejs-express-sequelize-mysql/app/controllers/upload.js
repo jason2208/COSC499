@@ -1,6 +1,8 @@
 const fs = require("fs");
 const db = require("../models");
 const Image = db.image;
+
+
 const uploadFiles = async (req, res) => {
   try {
 
@@ -20,27 +22,43 @@ const uploadFiles = async (req, res) => {
         });
         return;
       }
+    var tmpPath, upPath;
     var type =  req.body.type;
     Image.create({
       uid: req.body.uid, 
       type: req.file.mimetype,
       name: (req.body.type +Date.now() +  req.file.originalname),
       data: fs.readFileSync(
-        __basedir + "/app/resources/uploads/" + req.file.filename
+        __basedir + "/public/tmp/" + req.file.filename
       ),
     }).then(
           (image) => {
       fs.writeFileSync(
-        __basedir + "/app/resources/tmp/" + image.name,
+        __basedir + "/public/imgs/" + image.name,
         image.data
       );
-      console.log("Uid Added.");
-      return res.send(`Uid added to the database.`);
-    });
-  } catch (error) {
+      fs.unlink( __basedir + "/public/tmp/" + req.file.filename, (err) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        // tmp file removed
+      });
+      /*
+      fs.unlink(  __basedir + "/resources/uploads/" + req.file.filename, (err) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        
+      });
+      */
+      console.log("Image Uploaded!");
+      return res.send(`Image Uploaded.`);
+    })}catch (error) {
     console.log(error);
     return res.send(`Error when trying upload images: ${error}`);
-  }
+  } 
 };
 module.exports = {
   uploadFiles,
