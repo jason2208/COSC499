@@ -1,12 +1,13 @@
 import React from 'react'
-import Navbar from './components/navbar/Navbar';
-import Hero from './components/Hero/Hero';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
+
+import Navbar from './components/navbar/Navbar';
 import Search from './components/pages/search/search';
 import About from './components/pages/about';
 import Services from './components/pages/services';
 import Home from './components/pages/home';
+
 
 import SignIn from './components/account/signin';
 import SignUp from './components/account/signup';
@@ -33,7 +34,7 @@ const App = () => {
        </Routes>
    
    </Router>
+
   )
 }
-
 export default App;
