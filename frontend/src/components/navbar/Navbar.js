@@ -36,8 +36,8 @@ class Navbar extends React.Component{
          
         </ul>
         <div className="sign-up-buttons">
-          <Button className="btn--outline">Sign In</Button>
-          <Button>Sign Up</Button>
+          <a href="/signin"><Button className="btn--outline">Sign In</Button></a>
+          <a href="/signup"><Button>Sign Up</Button></a>
         </div>
       </nav>
 
