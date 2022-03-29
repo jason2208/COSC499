@@ -1,59 +1,57 @@
 const fs = require("fs");
 const db = require("../models");
-const Location = db.location;
+const Social = db.social;
 const Op = db.Sequelize.Op;
 
-const geocode = require("../middleware/geocoding");
-
 // Create and Save a new user
-exports.create = async (req, res) => {
-    // Validate request
+exports.create = (req, res) => {
 
-    if (!req.body) {
+    var accounts = [];
+    var platforms = [];
+    var result;
+
+    if (!req.body.uid) {
       res.status(400).send({
-        message: "address can not be empty!"
+        message: "Content can not be empty!"
       });
       return;
     }
-    if (!req.body.uid) {
-        res.status(400).send({
-          message: "uid can not be empty!"
+
+    //key fb is facebook, in is instagram, tw is twitter 
+    if(req.body.fb){ accounts.push(req.body.fb); platforms.push( "fb" );}
+    if(req.body.in){ accounts.push(req.body.in); platforms.push( "in" );}
+    if(req.body.tw){ accounts.push(req.body.tw); platforms.push( "tw" );}
+
+    // Create a social link for each link provided
+    while( accounts.length > 0 ){
+ 
+        const social = {
+        uid: req.body.uid,
+        type: platforms.pop(),
+        tag: accounts.pop(),
+        };
+        // Save User in the database
+        Social.create(social)
+        .then(data => {
+            result += data;
+        })
+        .catch(err => {
+            res.status(500).send({
+            message:
+                err.message || "Some error occurred while creating the User."
+            });
         });
-        return;
-      }
 
-    let geoCoordinates = await geocode.FindByKeyWord(req,res);
-    var geoLat = (JSON.parse(geoCoordinates).results[0].geometry.location.lat);
-    var geoLng = (JSON.parse(geoCoordinates).results[0].geometry.location.lng);
 
-    // Create a User
-    const location = {
-      uid:req.body.uid,
-      address: req.body.address,
-      lat: geoLat,
-      lng: geoLng,
-    };
-
-    // Save Location in the database
-    Location.create(location)
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while creating the User."
-        });
-      });
+    }
+    res.send(result);
   };
-
-
 // Retrieve all Users from the database where region is  ? 
 exports.findAll = (req, res) => {
   const id = req.body.uid;
- // var condition = uid ? { region: { [Op.like]: `%${uid}%` } } : null;
-  Location.findAll({  where: { uid: id }
-  })
+  //var condition = region ? { uid: { [Op.like]: `%${uid}%` } } : null;
+  //Social.findAll({ where: condition })
+  Social.findAll({ where: { uid:id} })
     .then(data => {
       res.send(data);
     })
@@ -67,7 +65,7 @@ exports.findAll = (req, res) => {
 // Update a user by the id in the request
 exports.update = (req, res) => {
   const id = req.params.uid;
-  Location.update(req.body, {
+  Social.update(req.body, {
     where: { uid: id }
 
   })
@@ -91,7 +89,7 @@ exports.update = (req, res) => {
 // Delete a user with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.uid;
-  Location.destroy({
+  Social.destroy({
     where: { uid: id }
   })
     .then(num => {
