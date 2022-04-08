@@ -1,7 +1,7 @@
-# Dashboard
-[](../../Documentation/screenshots/dashboard.JPG)
+# BACKEND
+[]("../../Documentation/screenshots/dashboard.JPG")
 ## Introduction
-The `dashboard` folder contains the files for the administrator dashboard. This is where the developers and client can securely access the database with an intuitive user interface. The main purpose is to be able to enable/disable user accounts when necessary.
+The `Backend` folder contains the files for the API. This REST api is responsible for populating the frontend with data by connecting in to the MySQL database, Google Maps API, Booking API, and payment API. 
 
 ## Setup 
 1) Make sure to have PHP, MySQL, and Apache installed. On Windows, we recommend xampp to install everything once. https://www.apachefriends.org/download.html
