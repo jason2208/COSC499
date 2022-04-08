@@ -31,7 +31,7 @@ To run the app, you must start up the Frontend, Backend-API, and dashboard seper
 
 1) [Frontend](/App/Frontend)
 2) [Dashboard](/App/Dashboard) 
-3) [Backend](/App/Frontend)
+3) [Backend](/App/Backend)
 
 
 
