@@ -1,5 +1,5 @@
 # The Woo Woo Network
-[]("Documentation/screenshots/home.png")
+![]("Documentation/screenshots/home.png")
 ## Introduction
 The Woo Woo Network is an online marketplace aimed at connecting spiritual healers with people seeking spiritual healing services.
 
