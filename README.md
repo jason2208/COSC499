@@ -1,5 +1,5 @@
 # The Woo Woo Network
-[]("/Documentation/screenshots/home.png")
+[]("Documentation/screenshots/home.png")
 ## Introduction
 The Woo Woo Network is an online marketplace aimed at connecting spiritual healers with people seeking spiritual healing services.
 
@@ -10,19 +10,20 @@ Please navigate to `docs/scrumtemplates` and click on the latest ScrumTemplate.p
 
 ## Structure
 ```rb
-App
- ↳ Frontend
- ↳ Backend
- ↳ Dashboard
-Documentation
-Testing
+PROJECT
+    ↳ App
+    ⏐  ↳ Frontend
+    ⏐  ↳ Backend
+    ⏐  ↳ Dashboard
+    ↳ Documentation
+    ↳ Testing
 ```
-#FILE PATHS
+## FILE PATHS
 [Frontend](/App/Frontend): The Node.js and React frontend. Styled using vanilla CSS.
 [Dashboard](/App/Dashboard): The PHP dashboard for W.W.N. admini to manage the app's content. 
 [Backend](/App/Frontend): The Express and MySql backend. Designed as an REST API for the frontend to use.
 [Documentation](/Documentation): All Project Documentation, Screentshots, sql setup queries and more.
-[Testin](/Testing): POSTMAN collections used to document the API live here. 
+[Testing](/Testing): POSTMAN collections used to document the API live here. 
 
 
 ## Setup
