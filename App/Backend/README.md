@@ -1,11 +1,9 @@
 # BACK END
-![](../../Documentation/screenshots/UX-Web-CityResults.png)
 
 ## Introduction
 The `backend` folder contains the files for the API. The API is relatively simple and is built using Express, Sequilize, and MySQL. *You must ensure the XAMP is running before trying to initialize the database*. 
 
-
-## Table Of Contens
+## Table Of Contents
 
 *BACKEND*
 
@@ -20,11 +18,13 @@ Documentation
     ↳ [Adding To The Api](#Adding-To-The-API)
 
 Folder Structure
-    ↳ [Config](#Config-Data)
+    ↳ [Config](#Config)
     ↳ [Controllers](#Controllers)
     ↳ [Middleware](#Middleware)
     ↳ [Models](#Models)
     ↳ [Routes](#Routes)
+    ↳ [Booking](#Booking)
+    ↳ [Public](#Public)
     
 
 ## TECH STACK
@@ -34,7 +34,7 @@ Folder Structure
 *Express.js* is used to create the backend server that the fronend communicates with. This server listens on port *localhost:8080* on this DEV enviroment. Ensure that this port is not the same port the frontend is using. ALso ensure that the frontend is sending requests to this port when it attempts to retrieve data from the API. 
 
 #### Configuring the Express.js server
-To change the server port and listening ports for the backend edit the **corsOptions** and **PORT** variables in the [server.js](/server.js) file. 
+To change the server port and listening ports for the backend edit the **corsOptions** and **PORT** variables in the [server.js](/App/Backend/server.js) file. 
 
 #### Adding To The API
 Adding new tables to the SQL database will mean you will need to update the routes for the API. This has a cascade effect. Small and simple changes must be made to several files> Don't fret they're easy to make, adding new tables and defining their routes is simple. But it is time consuming. Details on how to do so require their own section highlighted [here](#Adding-To-The-API)
@@ -65,14 +65,35 @@ NOTE: Frontend and Backend must not be on the same port. If you start the backen
 ## Adding To The Api
 To Add to the API follow these Step by step instructions
 
-1) Add `require("./app/routes/[TABLE-NAME].routes")(app);` to [server.js](/server.js) 
+1) Add `require("./app/routes/[TABLE-NAME].routes")(app);` to [server.js](/App/Backend/server.js) 
 2) Add `[TABLE-NAME].routes.js` file to the [/app/routes](/App/Backend/app/routes) folder. 
-2.1) Reffrencing other `.routes.js` files, document the appropriate API endpoints for the date users will retrieve from the new table in the newly created `[TABLE-NAME].routes.js`
-3) 
+3) Reffrencing other `.routes.js` files, document the appropriate API endpoints for the date users will retrieve from the new table in the newly created `[TABLE-NAME].routes.js` file from step 2
+4) Add `[TABLE-NAME].model.js` file to the [/app/routes](/App/Backend/app/models) folder. 
+5) Reffrencing other `.models.js` files, define the sequelize model that will ultimately go on to automatically create your new table in the database in the `[TABLE-NAME].model.js`file created in step 4
+6) Add `[TABLE-NAME].controller.js` file to the [/app/controllers](/App/Backend/app/controllers) folder. 
+7) Reffrencing other `.controller.js` files, create a controller that defines the actions performed by the API when calls are made to the endpoints you defined in step 2 in the `[TABLE-NAME].controller.js`file created in step 6. *This controller is where your SQL queries are defined*
 
+## Folder Structure
 
+### Config 
+- `db.config.js`: where the MySQL connection and authentication data is defined for use
+- `google.config.js`: where the GOOGLE MAPS API token is stored 
 
+### Controllers
+- Controllers for every table in the database. Each controller is where queries used to access the table's data is defined. 
+### Middleware
+-  `geocoding.js`: The module designed to handle all backend requests sent to the GOOGLE MAPS API. It performs geocoding from the addresses submitted by users. 
+-  `imageHandler.js`: The module designed to handle all image uploads made my users. It performs image verification for image size and file type. It saves the approved uploaded images in the [/Backend/public/imgs](/App/Backend/public/imgs) folder. 
 
+### Models
+- Table models for every table in the database. Each model defines the structure of a given table in the database. 
+### Routes
+- Each Route file documents the endpoints of the API, allowing users the ability to make well-formed requests to the server. 
+### Booking 
+(JASON FILL THIS PART IN)
+
+### Public
+- The location of images and other public files the frontend require that the backend stores
 
 
 
