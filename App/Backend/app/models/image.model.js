@@ -2,7 +2,7 @@ const { user } = require(".");
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize, Sequelize) => {
-    const social = sequelize.define("social", {
+    const image = sequelize.define("image", {
       
         uid: {
           primaryKey: true,
@@ -15,12 +15,15 @@ module.exports = (sequelize, Sequelize) => {
         type: {
             type: Sequelize.STRING,
           },
-        tag: {
+          name: {
             primaryKey: true,
             type: Sequelize.STRING,
           },
-    },{ tableName: 'socials'
+          data: {
+            type: Sequelize.BLOB("long"),
+          }
+    },{ tableName: 'images'
 });
 
-    return social;
+    return image;
   };
