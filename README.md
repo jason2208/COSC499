@@ -32,9 +32,11 @@ PROJECT
 3) Navigate to the newly created COSC499Project to view the source code. These files can be moved to the root folder of a server to
 be accessed through localhost or online.
 
-![ScreenShot]("Documentation/screenshots/home.png")
 ![ScreenShot]("/Documentation/screenshots/home.png")
+![ScreenShot]("Documentation/screenshots/home.png")
+[ScreenShot]("Documentation/screenshots/home.png")
 ![ScreenShot]("./Documentation/screenshots/home.png")
+
 
 ## Peer Testing Setup (just run the front end)
 1) cd to frontend
