@@ -4,7 +4,7 @@ import { useState } from "react";
 import {Button} from '../Button/button';
 
 
-class SignIn extends React.Component{
+class SignUp extends React.Component{
     
     state =  {
         email:[],
@@ -32,48 +32,80 @@ class SignIn extends React.Component{
             <div className="triangle">  
                 <div className="container">              
                     <form onChange={this.handleChange} onSubmit={this.handleSubmit} >
-                            
                         <div className="pageContent">
-                        <div className="loginForm">
-                                        
-                            <div className="topBlurb">
-                                <p>login to find a healer today!</p>
-                            </div>
-                            <div className="middleBlurb">
-                                <div className="email">
-                                    <fieldset>
-                                        <label>
-                                            <p className="emailTag">email</p>
-                                            <input 
-                                                 className="formEmail"
-                                                 type="email"                                        
-                                            />
-                                        </label>
-                                    </fieldset>
-                                </div>
-                                <div className="password">  
-                                    <div className="password">
-                                        <fieldset>
-                                            <label>
-                                                <p className="passwordTag" >password</p>
+                            <div className="container">
+                                <div className="loginForm">
+                                    <div className="leftBlock">
+                                        <button>+</button>
+                                        <p>click to upload a profile photo</p>
+                                    </div>
+                                    <div className="rightBlock">
+                                        <div className="firstName">
+                                            <fieldset>
+                                                <label>
+                                                    <p className="emailTag">first name</p>
                                                     <input 
-                                                        className="formPassword"
-                                                        type="password" 
-                                                        />
-                                            </label>
-                                        </fieldset>                          
-                                    </div>       
+                                                        className="formEmail"
+                                                        type="text"                                        
+                                                    />
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                        <div className="lastName">
+                                            <fieldset>
+                                                <label>
+                                                    <p className="emailTag">last name</p>
+                                                    <input 
+                                                        className="formEmail"
+                                                        type="email"                                        
+                                                    />
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                        <div className="email">
+                                            <fieldset>
+                                                <label>
+                                                    <p className="emailTag">email</p>
+                                                    <input 
+                                                        className="formEmail"
+                                                        type="email"                                        
+                                                    />
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                        <div className="password">
+                                            <fieldset>
+                                                <label>
+                                                    <p className="emailTag">password</p>
+                                                    <input 
+                                                        className="formEmail"
+                                                        type="password"                                        
+                                                    />
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                        <div className="dateOfBirth">
+                                            <fieldset>
+                                                <label>
+                                                    <p className="emailTag">date of birth</p>
+                                                    <input 
+                                                        className="formEmail"
+                                                        type="password"                                        
+                                                    />
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div className="bottom">
+                                        <div className="signin">
+                                            <a href="/signin">already have an account? click here</a>
+                                        </div>
+                                        <div className="loginButton">
+                                            <Button type="submit" className="btn--login">Register</Button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                                <div className="bottomBlurb">
-                                    <div className="register">
-                                        <a href="/signup">new? Click to register</a>
-                                    </div>
-                                    <div className="loginButton">
-                                        <Button type="submit" className="btn--login">Login</Button>
-                                    </div>
-                                </div>
-                        </div> 
                         </div>
                     </form>
                 </div>
@@ -87,4 +119,4 @@ class SignIn extends React.Component{
 }
 }
 
-export default SignIn
+export default SignUp
