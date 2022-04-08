@@ -24,7 +24,7 @@ PROJECT
 - [Backend](/App/Frontend): The Express and MySql backend. Designed as an REST API for the frontend to use.
 - [Documentation](/Documentation): All Project Documentation, Screentshots, sql setup queries and more.
 - [Testing](/Testing): POSTMAN collections used to document the API live here. 
-
+![ScreenShot](Documentation/screenshots/postman.png)
 
 ## Setup
 To run the app, you must start up the Frontend, Backend-API, and dashboard seperatly. Details on how to do so are listed in the README.md found in each of their respective folders. Follow to the links below for more instructions. We suggest initializing the Backend, Frontend, and Dashboard, in that order. 
