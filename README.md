@@ -31,10 +31,12 @@ PROJECT
 2) Clone the GitHub repository into the `htdocs` folder inside your xampp/apache installation using `git clone https://github.com/GreyWolfSif/COSC499Project.git`
 3) Navigate to the newly created COSC499Project to view the source code. These files can be moved to the root folder of a server to
 be accessed through localhost or online.
-
+<p>
+    <img src="/Documentation/screenshots/home.png" width="220" height="240" />
+</p>
 ![ScreenShot]("/Documentation/screenshots/home.png")
 ![ScreenShot]("Documentation/screenshots/home.png")
-[ScreenShot]("Documentation/screenshots/home.png")
+![ScreenShot]("Documentation/screenshots/home.png")
 ![ScreenShot]("./Documentation/screenshots/home.png")
 
 
