@@ -1,16 +1,29 @@
 # The Woo Woo Network
-
+[]("/Documentation/screenshots/home.png")
 ## Introduction
-The Woo Woo Network is an online hub that connects healers with clients in need of spiritual healing services. This is our team's capstone project that is being developed for a client.
+The Woo Woo Network is an online marketplace aimed at connecting spiritual healers with people seeking spiritual healing services.
+
+This repository contains the work of COSC499-Group 2's work for the term. It's a full stack CRUD webapp using Node.js, React, Express, and MySQL. 
 
 ## Evaluation
 Please navigate to `docs/scrumtemplates` and click on the latest ScrumTemplate.pdf to evaluate our weekly progress. Thank you.
 
 ## Structure
-- The `frontend` folder contains all the code for the front end content.
-- The `backend` folder contains all the code for the back end content.
-- The `dashboard` folder contains the files for the administrator dashboard. This is where the developers and client can securely access the database with an intuitive user interface. The main purpose is to be able to enable/disable user accounts when necessary.
-- The `docs` folder contains all the project documentation, screenshots, sql setup queries etc.
+```rb
+App
+ ↳ Frontend
+ ↳ Backend
+ ↳ Dashboard
+Documentation
+Testing
+```
+#FILE PATHS
+[Frontend](/App/Frontend): The Node.js and React frontend. Styled using vanilla CSS.
+[Dashboard](/App/Dashboard): The PHP dashboard for W.W.N. admini to manage the app's content. 
+[Backend](/App/Frontend): The Express and MySql backend. Designed as an REST API for the frontend to use.
+[Documentation](/Documentation): All Project Documentation, Screentshots, sql setup queries and more.
+[Testin](/Testing): POSTMAN collections used to document the API live here. 
+
 
 ## Setup
 1) Make sure to have PHP, MySQL, and Apache installed. On Windows, we recommend xampp to install everything once. https://www.apachefriends.org/download.html
