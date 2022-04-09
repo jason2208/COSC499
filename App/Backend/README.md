@@ -90,7 +90,7 @@ To Add to the API follow these Step by step instructions
 ### Routes
 - Each Route file documents the endpoints of the API, allowing users the ability to make well-formed requests to the server. 
 ### Booking 
-(JASON FILL THIS PART IN)
+The users will book appointments on a third-party API widget. They will have the abilities to select the services of their choice, the time frame they desired and some personal information for further contact. 
 
 ### Public
 - The location of images and other public files the frontend require that the backend stores
