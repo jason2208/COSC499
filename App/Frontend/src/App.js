@@ -7,6 +7,7 @@ import Search from './components/pages/search/search';
 import About from './components/pages/about';
 import Services from './components/pages/services';
 import Home from './components/pages/home';
+import Booking from './components/pages/Booking';
 
 
 import SignIn from './components/account/signin';
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/search' element={<Search />}component={Search} />
           <Route path='/services' element={<Services />} />
           <Route path='/about' element={<About />} />
+          <Route path='/booking' element={<Booking />} />
 
 
           //account
