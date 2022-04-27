@@ -14,4 +14,9 @@ export const MenuItems=[
         url:'./about',
         cName: 'nav-links'
     },
+    {
+        title:'Booking',
+        url:'booking',
+        cName: 'nav-links'
+    }
 ]
