@@ -6,7 +6,9 @@ function CalendarComponent() {
         script.src = "https://datelist.io/dist/datelist/1.3.6/js/app.js";
         script.async = true;
         document.body.appendChild(script);
-        window.dlist("e4598e80-79a4-4bf5-a165-2cf36574ac81");
+        script.onload=()=>{
+            window.dlist("e4598e80-79a4-4bf5-a165-2cf36574ac81");
+        }
         return () => {
             document.body.removeChild(script);
         }
