@@ -1,0 +1,53 @@
+.navbar-items {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 15%;
+    
+}
+
+.container img {
+    margin: 1vw;
+    width: 8vw;
+    align-items: left;
+    cursor: pointer;
+    justify-self: start;
+    object-fit: cover;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content:center; 
+    margin-top: 2rem;
+}
+
+.nav-links {
+    color:black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+}
+
+.nav-links:hover {
+    background-color:#E7E5E5 ;
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+
+}
+
+.sign-up-buttons {
+    width: 30%;
+    display: flex;
+}
